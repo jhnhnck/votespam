@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>VoteSpam</title>
+    <style>
+      h1,
+      h3 {
+        text-align: center;
+      }
+
+      button {
+        height: 200%;
+        margin: 0 auto;
+      }
+    </style>
+
+    <script>
+      function voteReq() {
+        return fetch(
+          "https://polldaddy.com/n/f592ed5210ef97040ee9d89564fab234/10200921?1546035061097",
+          { mode: "no-cors" }
+        );
+      }
+
+      function vote() {
+        setInterval(function() {
+          var req = new Array(40).fill(0).map(voteReq);
+          Promise.all(req).then(function() {
+            votecount.innerText = Number(votecount.innerText) + 40;
+          });
+        }, 5000);
+      }
+    </script>
+  </head>
+  <body>
+    <h3>You have contributed...</h3>
+    <h1 id="votecount">0</h1>
+
+    <button id="start" onclick="vote()">Start Voting</button>
+  </body>
+</html>
