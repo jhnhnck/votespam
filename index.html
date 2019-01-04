@@ -1,44 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>VoteSpam</title>
-    <style>
-      h1,
-      h3 {
-        text-align: center;
-      }
+    <title>Vote Spam | BCUZ Robotics</title>
 
-      button {
-        height: 200%;
-        margin: 0 auto;
-      }
-    </style>
-
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-87481308-3"></script>
     <script>
-      function voteReq() {
-        return fetch(
-          "https://polldaddy.com/n/f592ed5210ef97040ee9d89564fab234/10200921?1546035061097",
-          { mode: "no-cors" }
-        );
-      }
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-      function vote() {
-        setInterval(function() {
-          var req = new Array(40).fill(0).map(voteReq);
-          Promise.all(req).then(function() {
-            votecount.innerText = Number(votecount.innerText) + 40;
-          });
-        }, 5000);
-      }
+      gtag('config', 'UA-87481308-3');
     </script>
-  </head>
-  <body>
-    <h3>You have contributed...</h3>
-    <h1 id="votecount">0</h1>
 
-    <button id="start" onclick="vote()">Start Voting</button>
+    <!-- Dump Internet Things -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Metadata -->
+    <meta name="author" content="John Hancock <@jhnhnck#1776> (https://www.jhnhnck.com)">
+    <meta name="author" content="Brendan McGuire <@MayorMonty#4692> (https://bren.app)">
+
+    <!-- Styles -->
+    <link href="/styles/bare.min.css" rel=stylesheet>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i" rel="stylesheet">
+    <link href="/styles/bcuz-alpha.css" rel=stylesheet>
+  </head>
+
+  <neck></neck>
+
+  <body>
+    <section class="banner" id="header">
+      <section>
+        <div class="logo">
+          <img src="/images/bcuz-white-paw.svg">
+        </div>
+
+        <div class="title">
+          <h1>CLEMSON <b>VEX U</b> ROBOTICS</h1>
+          <h4>Vote Spamming for Tiger Band Poll</h4>
+          <h4>Clemson v. Alabama</h4>
+        </div>
+      </section>
+    </section>
+
+    <section id="main">
+      <div class="sub-heading">
+        <h2>Your Contributions</h2>
+      </div>
+
+      <div class="list-object">
+        <h1 id="vote-contrib" hidden></h1>
+        <p id="cookie-warning">This site uses cookies to enhance your experience. To save me from being sued, by continuing to use this site you consent to our use of cookies. All cookie data is anonymized and can be disabled at any time by doing fancy things with your browser, <i>probably</i>. For more information and our full policy, <a href="/privacy.html">click here</a>.</p>
+        <button id="init-voter">Start Voting</button>
+      </div>
+    </section>
+
+
   </body>
+
+  <script src="/js/votespam.js" type="module"></script>
 </html>
+

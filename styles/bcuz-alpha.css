@@ -1,0 +1,64 @@
+@charset "UTF-8";
+/*!
+ * BCUZ Robotics CSS v0.0.3_alpha (Built off of Bare.CSS)
+ *
+ * Author(s):
+ * - John Hancock (@jhnhnck) <john@dev.jhnhnck.com>
+ */
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #fbfaf9;
+  padding-top: 0 !important;
+}
+
+.banner {
+  background: linear-gradient(-30deg, #F66733 0%, #A25016 90%) #f66733;
+  text-align: center;
+  padding: calc(4vh + 2rem) 0 2.5vh;
+  color: #fbfaf9;
+}
+
+.banner h1 {
+  font-size: 5rem;
+  margin: 4rem 0 0;
+}
+
+.banner p {
+  font-size: 1.5rem;
+}
+
+.logo img {
+  height: 10vh !important;
+}
+
+.sub-heading {
+  border-bottom: 2px solid #f66733;
+  height: 2rem;
+  margin-bottom: 4rem;
+}
+
+.sub-heading h2 {
+  position: absolute;
+  display: inline-block;
+  padding: 0 20px 0 0;
+  margin: 0;
+  background: #fbfaf9;
+  color: #f66733;
+}
+
+.list-object h4 i {
+  font-size: 1.5rem;
+  position: absolute;
+  transform: translate(1rem, 0.375rem);
+}
+
+.list-object h4 b {
+  color: #562e19;
+}
+
+.list-object button {
+  color: #562e19;
+  background: #fbfaf9;
+  border: 1px solid #562e19;
+}
