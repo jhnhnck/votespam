@@ -2,10 +2,10 @@
 
 $REPORTS_DIR = realpath('/var/webroot/api-cache/');
 $rawPost = file_get_contents('php://input');
-$currentURL = '200';
+$currentURL = '202';
 
 if ($_SERVER['CONTENT_TYPE'] == 'application/json') {
-  file_put_contents($REPORTS_DIR . '/voting_report.json', $rawPost . "\n", $flags = FILE_APPEND | LOCK_EX);
+  file_put_contents($REPORTS_DIR . '/voting_report.json', $rawPost . "\n", $flags = FILE_APPEND);
   echo '{"message":"Accepted.","currentURL":' . $currentURL . '}';
   die();
 } else {
